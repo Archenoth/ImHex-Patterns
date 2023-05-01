@@ -1,0 +1,23 @@
+#+TITLE:Random ImHex Pattern Files
+#+AUTHOR:Archenoth
+
+tl;dr - I decided to make a folder with some =.hexpat= files, since I've been occasionally compelled to learn how to write new ones--and after doing that a few times, I figured I may as well make a git repo for them~
+
+* How to use
+If you have [[https://imhex.werwolv.net/][ImHex]], you can just drop these into a folder, and then add it to =Help -> Settings -> Folders=.
+
+These patterns don't have magic entries, so you can apply them by selecting the files in =File -> Import -> Pattern File= after you have something you want to parse open in the hex editor already! (And then click the "Run" button in the Pattern editor to apply it)
+
+* Contents
+These are the format's I've made pattern files for so far! More in the future incoming maybe?
+
+** [[./cosmo.hexpat][Cosmo's Cosmic Adventure archive format]]
+This hexpat applies to the old Apogee game [[https://en.wikipedia.org/wiki/Cosmo%27s_Cosmic_Adventure][Cosmo's Cosmic Adventure]]. I only have access to the shareware files, but you can play the game [[https://archive.org/details/CosmosCosmicAdventure][here]], and get the data files for it [[https://ia800302.us.archive.org/view_archive.php?archive=/9/items/CosmosCosmicAdventure/cosmo.ZIP][inside of the archive on the same page]].
+
+The [[./cosmo.hexpat][cosmo.hexpat]] applies to both the =.STL= and =.VOL= files, which are custom archives of files I haven't yet really dug into individually, but you can still extract from now~
+
+** [[./dn1map.hexpat][Duke Nukum 1 maps]]
+This hexpat applies to [[https://archive.org/details/DukeNukumVersion2.21993][Duke Nukum's]] (not a typo) map format, allowing you to edit/see the enemies/items/etc in each level. This pattern applies to all the =WORLDAL*.DN1= files in [[https://ia800103.us.archive.org/view_archive.php?archive=/30/items/DukeNukumVersion2.21993/DukeNukum.zip][this archive]].
+
+** [[./MZ.hexpat][Suuuper-simple DOS MZ EXE files]]
+This hexpat is a simple pattern that will let you see the info in the header of the file, as well as select the actual code within to disassemble, and see/jump to the entrypoint
