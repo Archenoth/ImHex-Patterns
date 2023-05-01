@@ -113,4 +113,4 @@ struct map_row_t {
 };
 
 // Maps are also 128 rows tall!
-map_row_t map_row[128] @ 0x00;
+map_row_t map_row[128] @ 0x00 [[hex::visualize("bitmap", this, 64, 90)]];
