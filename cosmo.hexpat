@@ -48,9 +48,9 @@ u8 empty_header_space[contents[0].fileAddr - $] @ $;
 // pattern editor, and things are out of order
 //
 // (I still need to figure out how to do this)
+for(u8 i = 0, i < std::string::parse_int(file_count, 10), i = i + 1){
+    std::mem::Section fileSection = std::mem::create_section(contents[i].filename);
 
-//#pragma debug
-//for(u8 i = 0, i < std::string::parse_int(file_count, 10), i = i + 1){
-//    std::print("{}", contents[i].size);
-//    u8 file[1] [[no_unique_address]] @ $;
-//};
+    u8 file[contents[i].size] @ 0x00 in fileSection;
+    file = contents[i].data;
+};
