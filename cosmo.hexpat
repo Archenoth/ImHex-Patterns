@@ -42,15 +42,8 @@ char file_count[2] @ $;
 // address)
 u8 empty_header_space[contents[0].fileAddr - $] @ $;
 
-// WIP: An attempt to give the Pattern data output the files on their
-// own, outside of the pointers in the header structs. Otherwise
-// clicking a random part of the file won't highlight it in the
-// pattern editor, and things are out of order
-//
-// (I still need to figure out how to do this)
+// Each file gets a Section! (Slow)
 for(u8 i = 0, i < std::string::parse_int(file_count, 10), i = i + 1){
-    std::mem::Section fileSection = std::mem::create_section(contents[i].filename);
-
-    u8 file[contents[i].size] @ 0x00 in fileSection;
-    file = contents[i].data;
+  std::mem::Section fileSection = std::mem::create_section(contents[i].filename);
+  std::mem::copy_value_to_section(contents[i].data, fileSection, 0x00);
 };
